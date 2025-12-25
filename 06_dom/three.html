@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a new element </title>
+</head>
+<body style="background-color: black; color : white" >
+
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    div.className = "main";
+    div.style.backgroundColor = "green";
+    div.style.padding = "10px";
+    div.setAttribute('id', 'main-div');
+    //div.innerText = "This is a newly created div";
+    const addText = document.createTextNode("chai or code ")
+    div.appendChild(addText);
+
+    document.body.appendChild(div);
+</script>
+</html>

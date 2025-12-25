@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai or code </title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+    console.log(parent.children);
+    Array.from(parent.children).forEach((child) => {
+        child.style.backgroundColor = 'green';
+        child.style.padding = '10px';
+        child.style.color = 'yellow';
+        child.innerText = child.innerText.toUpperCase();
+    })
+    const children = Array.from(parent.children);
+    children[0].style.backgroundColor = 'red';
+</script>    
+</html>

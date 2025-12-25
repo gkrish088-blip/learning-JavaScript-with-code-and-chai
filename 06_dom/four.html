@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coding</title>
+</head>
+<body style="background-color: black; color : white" >
+    <ul class="list">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){    // this is a basic function that comes in mind but it is not optimised as it transverses the tree 2 times 
+       const li =  document.createElement('li');
+       li.innerText= `${langName}`;
+       document.querySelector('.list').appendChild(li);
+    }
+
+
+
+    function addLanguageOptimised(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.list').appendChild(li)
+    }   // this is an optimised function beacuse it uses li to create text node instead of transversing the whole tree again 
+
+    addLanguage('Python');
+    addLanguage('C++');
+    addLanguageOptimised('rust');
+    addLanguage('cp');
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+
+</script>
+</html>
