@@ -1,7 +1,7 @@
 const form = document.querySelector('form')
 let bmi;
-console.log(form);
-console.log( document.querySelector('#height.innerHTML'))
+//console.log(form);
+//console.log( document.querySelector('#height.innerHTML'))
 form.addEventListener('submit',function(e){
     e.preventDefault()
     const height = (parseInt(document.querySelector('#height').value) /100)

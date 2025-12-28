@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #121212;
+    color: white;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.clock{
+    background-color: #216c73;
+    padding: 25px;
+    border-radius: 10px;
+    width: 80%;
+    align-items: center;
+}
+.container{
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+}
