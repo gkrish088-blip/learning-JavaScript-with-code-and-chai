@@ -1,0 +1,6 @@
+{
+    "editor.autoIndentOnPaste": true,
+    "github.copilot.chat.agent.currentEditorContext.enabled": true,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false
+}
