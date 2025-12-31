@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table,
+      th,
+      td {
+        border: 1px solid #e7e7e7;
+      }
+      .project {
+        background-color: #1c1c1c;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+      }
+
+      .color {
+        color: aliceblue;
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
+</head>
+<body style="background-color: #212121;">
+    <div class="project">
+        <div class="insert">
+            <div class="key">Your Profile</div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const insert = document.querySelector('.insert')
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    let followers;
+    let name;
+    let pic;
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            followers = data.followers
+            name = data.name
+            pic = data.avatar_url
+            console.log(name)
+            insert.innerHTML =`
+    <div class='color'>
+        <table>
+        <tr>
+            <th>Name</th>
+            <th>Pic</th>
+            <th>Followers</th>
+        </tr>
+        <tr>
+            <td>${name}</td>
+            <td><img src=${pic} alt="Company Logo"> </td>
+            <td>${followers}</td>
+        </tr>
+        </table>
+    </div>
+    `
+        }
+    }
+    xhr.send();
+    
+    
+</script>
+</html>
